@@ -20,7 +20,8 @@ function sendRequest(request,requestPort){
 }
 function initPage(xhttp){
     response = xhttp.responseText;
-    occasion = JSON.parse(response);
+    // occasion = JSON.parse(response);
+    occasion = response;
     console.log(occasion);
 }
 
