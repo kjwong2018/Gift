@@ -2,13 +2,13 @@
 
 
 var init = function(){
-    sendRequest("init","/init");
+    sendRequest("init","/request");
 }
 
 function sendRequest(request,requestPort){
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST",requestPort,true);
-    xhttp.setRequestHeader("Content-type", "application/json");
+    // xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.onreadystatechange = function(){
         if(this.readyState== 4 && this.status ==200){
 
