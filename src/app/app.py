@@ -39,13 +39,12 @@ def get_question():
 @app.route('/',methods=['GET'])
 @app.route('/index.html',methods=['GET'])
 def index():
-    get_question()
     return render_template('index.html')
 
 @app.route('/pick_gift.html',methods=['GET','POST'])
 def pickGift():
     return render_template('pick_gift.html')
-@app.route('/init',methods=['POST'])
+@app.route('/request',methods=['POST'])
 def message():
     rcvd = request.data
     print(rcvd)
