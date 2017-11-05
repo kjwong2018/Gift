@@ -7,6 +7,13 @@ var init = function(){
 
 function sendRequest(request,requestPort){
     var xhttp = new XMLHttpRequest();
+    var s= "";
+    if(request=="gift_please"){
+        for(sr in taglist){
+            s=s+","+sr;
+        }
+        request = s;
+    }
     xhttp.open("POST",requestPort,true);
     xhttp.setRequestHeader("Content-type", "text/plain");
     xhttp.onreadystatechange = function(){
@@ -64,7 +71,6 @@ function createComplete(arr){
     var check = document.createElement("button");
     check.className = "btn btn-info";
     check.innerHTML = "Check Gifts!!!";
-    check.
     text.innerHTML = "Status Completed";
     wraper.appendChild(text);
     wraper.appendChild(check);
