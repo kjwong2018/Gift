@@ -10,31 +10,36 @@ app = Flask(__name__)
 # def init_engine():
 #     engine = create_engine('gift:gift12345@mysql+pymysql://giftdatabase.c03akep9s2fc.us-west-2.rds.amazonaws.com:3306/giftdatabase')
 
-def get_data(filter):
-    myDict = {}
+def get_init():
+    myDict = {"init":{}}
     engine = create_engine('mysql+pymysql://gift:gift12345@giftdatabase.c03akep9s2fc.us-west-2.rds.amazonaws.com:3306/gift_db')
     connection = engine.connect()
     result = connection.execute('select * from tagType;')
-    # a = result[0]
-    # print(a)
     x = 0
     for i in result:
-        print(i[1])
-        myDict[x]=i[1]
-        x = x+1
+        if(i[0] == 1):
+            myDict["init"][i[1]]={}
+            t = i[1]
+        else:
+            myDict["init"][t][x]=i[1]
+            x = x+1
     print(myDict)
-    #     a = jsonify(result)
-    #     print(a)
-    # a = jsonify(result)
-    # print(a)
-    # result_dict = result.__dict__
-    # # print(result_dict)
     connection.close()
+    return myDict
+
+def get_question():
+    myDict = {"question":{}}
+    engine = create_engine('mysql+pymysql://gift:gift12345@giftdatabase.c03akep9s2fc.us-west-2.rds.amazonaws.com:3306/gift_questionair')
+    connection = engine.connect()
+    result = connection.execute('select * from questionair;')
+    for i in result:
+        print(i)
+
 
 @app.route('/',methods=['GET'])
 @app.route('/index.html',methods=['GET'])
 def index():
-    get_data("hi")
+    get_question()
     return render_template('index.html')
 
 @app.route('/pick_gift.html',methods=['GET','POST'])
@@ -43,7 +48,9 @@ def pickGift():
 @app.route('/init',methods=['POST'])
 def message():
     rcvd = request.data
-    msg = {"my":"help"}
+    print(rcvd)
+    # if(rcvd == "init"):
+    msg = get_init()
     print(msg)
     return jsonify(msg)
 
