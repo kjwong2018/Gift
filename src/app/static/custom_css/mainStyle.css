@@ -1,9 +1,12 @@
-
+body{
+    height: 100%;
+}
 .my-color-f{
     background-color:darkslategray;
 }
 #top-banner{
     background-color:#c3e6cb;
+
 }
 .r-100{
     padding:100px 0;
@@ -12,5 +15,27 @@
     padding:200px 0;
 }
 #question{
-    background-color: #e0a800;
+    background-color: #c3e6cb;
+}
+.flex-display{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.flex-items{
+    width:30%;
+    padding: 50px;
+}
+.flex-items:hover{
+    opacity:0.5;
+    cursor: pointer;
+}
+#questionC{
+    background-color:#fff;
+}
+footer{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
