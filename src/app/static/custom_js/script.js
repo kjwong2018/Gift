@@ -21,6 +21,10 @@ function sendRequest(request,requestPort){
 function initPage(xhttp){
     response = xhttp.responseText;
     occasion = JSON.parse(response);
+
+    if(occasion[0]){
+
+    }
     console.log(occasion);
 }
 
