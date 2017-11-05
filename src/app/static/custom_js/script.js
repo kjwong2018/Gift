@@ -11,18 +11,26 @@ function sendRequest(request,requestPort){
     // xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.onreadystatechange = function(){
         if(this.readyState== 4 && this.status ==200){
-
-            initPage(this);
+            parseResponse(this);
         }
     }
 
     xhttp.send(request)
 }
-function initPage(xhttp){
+function parseResponse(xhttp){
     response = xhttp.responseText;
+    parsedData = JSON.parse(response);
+    if(parsedData.keys()[0]=="init"){
+        initPage(parsedData["init"]);
+    }
+}
+function initPage(ocassions){
+    for(ocassion in ocassions){
+        alert(ocassion);
+    }
+
     // occasion = JSON.parse(response);
-    occasion = response;
-    console.log(occasion);
+
 }
 
 
