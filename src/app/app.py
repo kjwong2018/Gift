@@ -47,15 +47,15 @@ def pickGift():
 
 @app.route('/request',methods=['POST'])
 def message():
-    rcvd = request.data
+    rcvd = request.data.decode('ascii')
     print(rcvd)
-    if(rcvd == b'init'):
-        print("124324213")
+    if(rcvd == "init"):
         msg = get_init()
         print(msg)
         return jsonify(msg)
-    elif(rcvd == b'question'):
-        msg = get_question
+    elif(rcvd == "question"):
+
+        msg = get_question()
         print(msg)
         return jsonify(msg)
 
