@@ -8,18 +8,19 @@ var init = function(){
 function sendRequest(request,requestPort){
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST",requestPort,true);
-    // xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.setRequestHeader("Content-type", "text/plain");
     xhttp.onreadystatechange = function(){
         if(this.readyState== 4 && this.status ==200){
             parseResponse(this);
         }
     }
 
-    xhttp.send(request)
+    xhttp.send(request);
 }
 function parseResponse(xhttp){
     response = xhttp.responseText;
     parsedData = JSON.parse(response);
+    console.log(parsedData);
     if(parsedData.keys()[0]=="init"){
         initPage(parsedData["init"]);
     }
