@@ -74,7 +74,7 @@ function createComplete(arr){
     text.innerHTML = "Status Completed";
     wraper.appendChild(text);
     wraper.appendChild(check);
-    sendRequest("gift_please","/request");
+    sendRequest("gift_please","/complete");
     return wraper;
 }
 function clear(containner){
