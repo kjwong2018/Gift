@@ -29,6 +29,38 @@ function parseResponse(xhttp){
     parsedData = JSON.parse(response);
     if("question" in parsedData){
         generateQuestion(parsedData["question"]);
+    }else if("request" in parsedData){
+        generateGift(parsedData["request"]);
+    }
+}
+function generateGift(gift){
+    var con = document.getElementById("gift");
+    con.className = "flex-display text-center";
+    con.style.marginBottom = "50px";
+    con.style.paddingBottom = "25px";
+    for(x in gift){
+        var wraper = document.createElement("div");
+        wraper.className = "flex-items";
+        var name = document.createElement("h3");
+        var price = document.createElement("p");
+        var image = document.createElement("img");
+        image.style.width = "150px";
+        var webLink = document.createElement("a");
+
+        name.innerHTML = gift[x]["name"];
+        price.innerHTML = "$"+gift[x]["price"]
+        image.src = gift[x]["image"];
+        webLink.innerHTML = "Check me out =>"+gift[x]["name"];
+        webLink.href = gift[x]["link"];
+        webLink.target = "_blank";
+        wraper.style.padding = "50px";
+        wraper.style.border = "5px solid white";
+
+        wraper.appendChild(name);
+        wraper.appendChild(price);
+        wraper.appendChild(image);
+        wraper.appendChild(webLink);
+        con.appendChild(wraper);
     }
 }
 function initPage(ocassions){
@@ -69,11 +101,14 @@ function createComplete(arr){
     var wraper = document.createElement("div");
     var text = document.createElement("h2");
     var check = document.createElement("button");
+    var con = document.createElement("div");
+    con.id = "gift";
     check.className = "btn btn-info";
     check.innerHTML = "Check Gifts!!!";
     text.innerHTML = "Status Completed";
     wraper.appendChild(text);
     wraper.appendChild(check);
+    wraper.appendChild(con);
     sendRequest("gift_please","/complete");
     return wraper;
 }
