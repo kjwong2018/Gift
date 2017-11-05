@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 
 app = Flask(__name__)
 
-def get_init():
+def get_complete(msg):
     myDict = {"init":{}}
     engine = create_engine('mysql+pymysql://gift:gift12345@giftdatabase.c03akep9s2fc.us-west-2.rds.amazonaws.com:3306/gift_db')
     connection = engine.connect()
@@ -49,14 +49,26 @@ def pickGift():
 def message():
     rcvd = request.data.decode('ascii')
     print(rcvd)
-    if(rcvd == "init"):
-        msg = get_init()
-        print(msg)
-        return jsonify(msg)
-    elif(rcvd == "question"):
-        msg = get_question()
-        print(msg)
-        return jsonify(msg)
+    # print("fk")
+    # if(rcvd == "complete"):
+    #     msg = get_complete()
+    #     print(msg)
+    #     return jsonify(msg)
+    # elif(rcvd == "question"):
+    msg = get_question()
+    print(msg)
+    return jsonify(msg)
+
+@app.route('/complete',methods=['POST'])
+def complete():
+    rcvd = request.data.decode('ascii')
+    print(rcvd)
+    listAns = rcvd.split(",")
+    listAns.pop(0)
+    print(listAns)
+    msg = get_complete(listAns)
+    # print(msg)
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
