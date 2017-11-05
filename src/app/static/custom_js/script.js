@@ -10,7 +10,7 @@ function sendRequest(request,requestPort){
     var s= "";
     if(request=="gift_please"){
         for(sr in taglist){
-            s=s+","+sr;
+            s=s+","+taglist[sr];
         }
         request = s;
     }
@@ -74,7 +74,7 @@ function createComplete(arr){
     text.innerHTML = "Status Completed";
     wraper.appendChild(text);
     wraper.appendChild(check);
-    sendRequest("gift_please","/request");
+    sendRequest("gift_please","/complete");
     return wraper;
 }
 function clear(containner){
