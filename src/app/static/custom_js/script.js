@@ -10,7 +10,7 @@ function sendRequest(request,requestPort){
     var s= "";
     if(request=="gift_please"){
         for(sr in taglist){
-            s=s+","+sr;
+            s=s+","+taglist[sr];
         }
         request = s;
     }

@@ -1,6 +1,9 @@
 body{
     height: 100%;
 }
+.aws-font{
+    color:rgb(123, 67, 151);
+}
 .my-color-f{
     background-color:darkslategray;
 }
