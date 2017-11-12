@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title> Gift</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{{url_for('static', filename = 'vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'custom_css/mainStyle.css') }}" rel="stylesheet">
+	<link href="{{url_for('static', filename = 'vendor/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename = 'vendor/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{url_for('static',filename = 'vendor/simple-line-icons/css/simple-line-icons.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  </head>
+
+<body id = "page-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id = "mainNav">
+        <div class = "container">
+            <a class = "navbar-brand js-scroll-trigger" href = "#page-top"><img id="logo" height="70px" width="100px" src="static/images/logo.png" /></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                  <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="#team-member">Team Info</a>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </nav>
+    <header id="top-banner">
+      <div class="container">
+        <div class="row  r-200 my-auto mx-auto">
+          <div class="col-lg-7 my-auto">
+            <div class="header-content mx-auto">
+				<h1 class="mb-5"> Gift</h1>
+				<hr>
+				<h3 style = "margin-bottom:25px"> A website that helps you pick a gift for your firends, family or love ones for any occasion. </h3>
+
+                <a class ="btn btn-warning my-auto" href = "pick_gift.html">Pick Gift</a>
+            </div>
+          </div>
+          <div class="col-lg-5 my-auto">
+            <img class = "header-content mx-auto" src = "static/images/gifts.png">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id = "features">
+        <div class = "conatiner">
+            <div class = "section-heading text-center" style="background-color: #c3e6cb;padding:20px 0">
+                <h2>Feature</h2>
+            </div>
+            <div class = "row my-auto mx-auto text-center">
+                <div class = "col-lg-3 my-auto r-100" style = "background-color: #c3e6cb">
+                    <i class = "fa fa-amazon aws-font" style="font-size: 80px"></i>
+                    <p>Utilized Amazon Web Service</p>
+                </div>
+                <div class = "col-lg-3 my-auto r-100" style = "background-color: grey">
+                    <i class = "fa fa-code aws-font" style="font-size: 80px"></i>
+                    <p>Web Application</p>
+                </div>
+                <div class = "col-lg-3 my-auto r-100" style = "background-color: #c3e6cb">
+                    <i class = "fa fa-github-alt aws-font" style="font-size: 80px"></i>
+                    <p>Open Source Github</p>
+                </div>
+                <div class = "col-lg-3 my-auto r-100" style = "background-color: grey">
+                    <i class = "icon-home aws-font" style="font-size: 80px"></i>
+                    <p>Made by UB Hack</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="team-member"  style = "background-color:grey">
+     <div class="container text-center my-auto">
+      <div class="section-heading text-center"style = "padding:20px 0">
+			<h2>Team Information</h2>
+			<p class="text-muted" style = "color:white">These people are good!!</p>
+			<hr>
+      </div>
+      <div class="r-100" style = "margin-top: -80px">
+        <h2>Xuanyu Dong<a class="badge-link" href="https://github.com/xuanyudo" target = "_blank"><img width="50" src="static/images/if_github_291716.svg" alt=""></a></h2>
+        <h2>Kevin Wong<a class="badge-link" href="https://github.com/xuanyudo" target = "_blank"><img width="50" src="static/images/if_github_291716.svg" alt=""></a></h2>
+        <h2>John Zheng<a class="badge-link" href="https://github.com/xuanyudo" target = "_blank"><img width="50" src="static/images/if_github_291716.svg" alt=""></a></h2>
+        <h2>Rong Yang<a class="badge-link" href="https://github.com/xuanyudo" target = "_blank"><img width="50" src="static/images/if_github_291716.svg" alt=""></a></h2>
+      </div>
+     </div>
+    </section>
+    <footer>
+      <div class="container-fluid my-color-f text-center" style="color:white">
+        <p>&copy; UBHacking-Gift</p>
+        <ul class="list-inline my-auto">
+          <li class="list-inline-item">
+            <a href="#">Privacy</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Terms</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="{{url_for('static',filename = 'vendor/jquery/jquery.min.js') }}"></script>
+	<script src="{{url_for('static',filename = 'vendor/popper/popper.min.js') }}"></script>
+	<script src="{{url_for('static',filename = 'vendor/bootstrap/js/bootstrap.js') }}"></script>
+    <script src="{{url_for('static',filename = 'vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+</html>

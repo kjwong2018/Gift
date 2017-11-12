@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title> Gift</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{{url_for('static', filename = 'vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'custom_css/mainStyle.css') }}" rel="stylesheet">
+	<link href="{{url_for('static', filename = 'vendor/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename = 'vendor/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{url_for('static',filename = 'vendor/simple-line-icons/css/simple-line-icons.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  </head>
+<body id = "page-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id = "mainNav">
+        <div class = "container">
+            <a class = "navbar-brand js-scroll-trigger" href = "index.html"><img id="logo" height="70px" width="100px" src="static/images/logo.png" /></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="#proj-des">Description</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="#team-member">Team Info</a>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </nav>
+    <section class = "container-fluid text-center r-100 " style = "font-size: 150%" id = "top-banner">
+        <h1>Time to pick gift</h1>
+        <p class = "text-muted">More you know about recipient, more suitable gift </p>
+    </section>
+    <section class = "container-fluid text-center" id = "question">
+
+    </section>
+    <footer>
+      <div class="container-fluid my-color-f text-center my-auto" style = "color:white">
+        <p>&copy; UBHacking-Gift</p>
+        <ul class="list-inline my-auto">
+          <li class="list-inline-item">
+            <a href="#">Privacy</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Terms</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="{{url_for('static',filename = 'vendor/jquery/jquery.min.js') }}"></script>
+
+    <script src="{{url_for('static',filename = 'custom_js/script.js') }}"></script>
+	<script src="{{url_for('static',filename = 'vendor/popper/popper.min.js') }}"></script>
+	<script src="{{url_for('static',filename = 'vendor/bootstrap/js/bootstrap.js') }}"></script>
+    <script src="{{url_for('static',filename = 'vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+</html>
